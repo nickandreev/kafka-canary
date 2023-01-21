@@ -39,8 +39,8 @@ var (
 )
 
 type producerService struct {
-	client          client.Connector
-	producer        kafka.Writer
+	client          *client.Connector
+	producer        *kafka.Writer
 	canaryConfig    *canary.Config
 	connectorConfig client.ConnectorConfig
 	logger          *zerolog.Logger
@@ -70,8 +70,8 @@ func NewProducerService(canaryConfig canary.Config, connectorConfig client.Conne
 	logger.Info().Msg("Created producer service writer")
 
 	return &producerService{
-		client:          *client,
-		producer:        *producer,
+		client:          client,
+		producer:        producer,
 		canaryConfig:    &canaryConfig,
 		connectorConfig: connectorConfig,
 		logger:          logger,

@@ -46,11 +46,14 @@ func main() {
 	// Bind flags and environment variables
 	viper.SetEnvPrefix("KAFKA_CANARY")
 	viper.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
-	viper.BindPFlags(fs)
+	err := viper.BindPFlags(fs)
+	if err != nil {
+		panic(err.Error())
+	}
 	viper.AutomaticEnv()
 
 	// parse flags
-	err := fs.Parse(os.Args[1:])
+	err = fs.Parse(os.Args[1:])
 	switch {
 	case err == pflag.ErrHelp:
 		os.Exit(0)
