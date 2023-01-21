@@ -10,3 +10,7 @@ test:
 fmt:
 	gofmt -l -s -w ./
 	goimports -l --local "github.com/pecigonzalo/kafka-canary" -w ./
+
+.PHONY lint:
+lint:
+	golangci-lint run
