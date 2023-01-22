@@ -6,9 +6,10 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/rs/zerolog"
+
 	"github.com/pecigonzalo/kafka-canary/internal/canary"
 	"github.com/pecigonzalo/kafka-canary/internal/services/util"
-	"github.com/rs/zerolog"
 )
 
 // Status defines useful status related information

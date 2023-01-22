@@ -6,12 +6,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pecigonzalo/kafka-canary/internal/canary"
-	"github.com/pecigonzalo/kafka-canary/internal/client"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/rs/zerolog"
 	"github.com/segmentio/kafka-go"
+
+	"github.com/pecigonzalo/kafka-canary/internal/canary"
+	"github.com/pecigonzalo/kafka-canary/internal/client"
 )
 
 var (

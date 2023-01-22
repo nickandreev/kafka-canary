@@ -7,15 +7,16 @@ import (
 	"strings"
 	"time"
 
+	"github.com/rs/zerolog"
+	"github.com/spf13/pflag"
+	"github.com/spf13/viper"
+
 	"github.com/pecigonzalo/kafka-canary/internal/api"
 	"github.com/pecigonzalo/kafka-canary/internal/canary"
 	"github.com/pecigonzalo/kafka-canary/internal/client"
 	"github.com/pecigonzalo/kafka-canary/internal/services"
 	"github.com/pecigonzalo/kafka-canary/internal/signals"
 	"github.com/pecigonzalo/kafka-canary/internal/workers"
-	"github.com/rs/zerolog"
-	"github.com/spf13/pflag"
-	"github.com/spf13/viper"
 )
 
 var (
