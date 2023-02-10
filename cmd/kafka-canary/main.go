@@ -44,8 +44,6 @@ func main() {
 
 	config := loadConfig()
 
-	fmt.Println(config)
-
 	logger := setupLogger(config)
 
 	// Start HTTP server
