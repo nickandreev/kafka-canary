@@ -109,8 +109,7 @@ func setupFlags() *pflag.FlagSet {
 
 	err := viper.BindPFlags(fs)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Failed to bind flags to viper: %s\n\n", err.Error())
-		os.Exit(2)
+		exitError(err, 2, "Failed to bind flags to viper")
 	}
 
 	return fs
