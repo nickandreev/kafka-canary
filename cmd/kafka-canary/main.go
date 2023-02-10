@@ -152,7 +152,10 @@ func parseFlags(fs *pflag.FlagSet, versionFlag *bool) {
 		configName := f.Name
 		if !f.Changed && viper.IsSet(configName) {
 			val := viper.Get(configName)
-			fs.Set(f.Name, fmt.Sprintf("%v", val))
+			err = fs.Set(f.Name, fmt.Sprintf("%v", val))
+			if err != nil {
+				exitError(err, 2, "Set flag error")
+			}
 		}
 	})
 }
